@@ -2,7 +2,7 @@
 
 ### 关于
 
-仓库克隆自FreeRTOS官方仓库，为方便阅读分析，做了大量精简，主要精简在以下方面
+仓库克隆自FreeRTOS官方仓库 [GitHub - FreeRTOS](https://github.com/FreeRTOS/FreeRTOS)，为方便阅读分析，做了大量精简，主要精简在以下方面
 
 1. 移除大量FreeRTOS对于不同平台的适配文件
 
