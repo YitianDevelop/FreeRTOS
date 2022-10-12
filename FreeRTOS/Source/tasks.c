@@ -1974,7 +1974,7 @@ void print_ready_status(){
             {
                 // printf("\terror tcb == null \n");
             }else{
-                printf("\ttask_name : %s \n", tcb->pcTaskName);
+                printf("\ttask_name : %s ,counter :%d \n", tcb->pcTaskName , tcb->ulRunTimeCounter);
             }
         }
     }
@@ -1992,7 +1992,7 @@ void print_delay_status(){
             {
                 // printf("error tcb == null \n");
             }else{
-                printf("\ttask_name : %s \n", tcb->pcTaskName);
+                printf("\ttask_name : %s  wake_at_tick : %d \n", tcb->pcTaskName,tcb->xStateListItem.xItemValue);
             }
         }
     printf("\n\n\n");
@@ -2777,7 +2777,7 @@ BaseType_t xTaskIncrementTick( void )
     TCB_t * pxTCB;
     TickType_t xItemValue;
     BaseType_t xSwitchRequired = pdFALSE;
-    printf("tick!  %s \n",pxCurrentTCB->pcTaskName);
+    printf("tick! now_task: %s ,tick_num : %d \n",pxCurrentTCB->pcTaskName,xTickCount);
     print_ready_status();
     print_delay_status();
 

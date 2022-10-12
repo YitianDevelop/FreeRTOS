@@ -94,6 +94,8 @@
 
 static void yan_taks2(void *pvParameters);
 static void yan_taks1(void *pvParameters);
+static void yan_taks4(void *pvParameters);
+static void yan_taks3(void *pvParameters);
 
 
 void main_blinky(void)
@@ -102,6 +104,8 @@ void main_blinky(void)
   xTaskCreate(yan_taks2,"TASK_2", configMINIMAL_STACK_SIZE, NULL, 4, NULL);
   xTaskCreate(yan_taks1, "TASK_1", configMINIMAL_STACK_SIZE, NULL, 4, NULL);
   xTaskCreate(yan_taks1, "TASK_3", configMINIMAL_STACK_SIZE, NULL, 4, NULL);
+  xTaskCreate(yan_taks3, "TASK_5", configMINIMAL_STACK_SIZE, NULL, 4, NULL);
+  xTaskCreate(yan_taks4, "TASK_4", configMINIMAL_STACK_SIZE, NULL, 4, NULL);
 
   vTaskStartScheduler();
   for (;;)
@@ -121,6 +125,24 @@ static void yan_taks1(void *pvParameters)
 static void yan_taks2(void *pvParameters)
 {
   (void)pvParameters;
+  while (1)
+  {
+    //printf("%s", "task_2 running \n");
+  }
+}
+static void yan_taks3(void *pvParameters)
+{
+  (void)pvParameters;
+  vTaskDelay(2000);
+  while (1)
+  {
+    //printf("%s", "task_2 running \n");
+  }
+}
+static void yan_taks4(void *pvParameters)
+{
+  (void)pvParameters;
+  vTaskDelay(200);
   while (1)
   {
     //printf("%s", "task_2 running \n");
